@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Janice's Website</title>
+    <link rel="stylesheet" href="./code/style.css">
+</head>
+<body>
+  <div class="background-img"></div>
+  <div class="main-container" id="background">
+      <div class="title-container">
+        <!-- <div class="title">JANICE</div> -->
+        <img class="title" src="./assets/title.png" alt="title">
+        <div class="social-container">
+          <input class="social" type="image" onClick="parent.open('https://www.linkedin.com/in/janice-ji/')" src="./assets/linkedIn.png"/>
+          <input class="social" type="image" onClick="location.href='mailto:jyj9@cornell.edu'" src="./assets/email.png" style="margin: bottom 5px;"/>
+          <input class="social" type="image" onClick="parent.open('https://github.com/janiceji218')" src="./assets/github.png" style="margin-bottom: -10px;" />
+        </div>
+      </div>
+      <div class="button-container" id="play-buttons" style="opacity:0">
+        <input class="button" type="image" id = "about-button" hidden="true" src="./assets/About.png" />
+        <input class="button" type="image" id = "skills-button" hidden="true" src="./assets/Skills.png" />
+        <input class="button" type="image" id = "projects-button" hidden="true" src="./assets/Projects.png" />
+      </div>
+      <div class="button-container" id="start-buttons">
+        <input class="button" type="image" id = "start-button" src="./assets/start-button.png" />
+        <input class="button" type="image" id = "resume-button" src="./assets/resume-button.png" onClick="parent.open('./assets/resume.pdf')"/>
+        <input class="button" type="image" id = "credits-button" src="./assets/credits-button.png" />
+      </div>
+      <input class="menu" type="image" src="./assets/home.svg"></input>
+  </div>
+  <div class="modal-container"> 
+      <div class="modal" id="about-modal" style="background-image: url(./assets/about-modal.png);">
+          <div class="tab-group">
+            <input class="tab" id="me-tab" type="image" style="filter:brightness(100%); opacity: 1" src="./assets/me-tab.svg" onclick="selectMe()"/>
+            <input class="tab" id="education-tab" type="image" src="./assets/education-tab.svg" onclick="selectEducation()"/>
+            <input class="tab" id="experience-tab" type="image" src="./assets/experience-tab.svg" onclick="selectExperience()"/>
+          </div>
+          <input class="x-button" id="about-x" style="left: 42%" type="image" src="./assets/exit-button.png"></input>
+          <div class="about-content">
+            <div class="me-content" id="me">
+                <div class="left-content">
+                  <img class="photo" src="./assets/me-photo.svg"/>
+                  <div class="header">Janice Ji</div>
+                  <div class="text">Birthday: February 18, 2001</div>
+                </div>
+                <div class="right-content">
+                  <div class="header" id="1">Biography</div>
+                  <div class="text" id="1">stuff</div>
+                  <div class="header" id="2">Hobbies</div>
+                  <div class="text" id="2">stuff</div>
+                </div>
+            </div>
+          </div>
+      </div>
+      <div class="modal" id="skills-modal" style="background-image: url(./assets/skills-modal.png);">
+          <input class="x-button" type="image" src="./assets/exit-button.png"></input>
+          <div class="grid-container">
+            <div class="skill-container">
+              <div>java</div>
+                <input class="skill" type="image" src="./assets/logos/java.svg"></input>
+            </div>
+            <div class="skill-container">
+                <div>python</div>
+                <input class="skill" type="image" src="./assets/logos/python.svg"></input>
+            </div>
+            <div class="skill-container">
+                <div>c</div>
+                <input class="skill" type="image" src="./assets/logos/c.svg"></input>
+            </div>
+            <div class="skill-container">
+                <div>php</div>
+                <input class="skill" type="image" src="./assets/logos/php.svg"></input>
+            </div>
+            <div class="skill-container">
+                <div>r studio</div>
+                <input class="skill" type="image" src="./assets/logos/r-studio.svg"></input>
+            </div>
+            <div class="skill-container">
+                <input class="skill" type="image" src="./assets/logos/ocaml.svg"></input>
+                <div>ocaml</div>
+            </div>
+            <div class="skill-container">
+                <input class="skill" type="image" src="./assets/logos/html.svg"></input>
+                <div>html/css</div>
+            </div>
+            <div class="skill-container">
+                <input class="skill" type="image" src="./assets/logos/react.svg"></input>
+                <div>react</div>
+            </div>
+            <div class="skill-container">
+                <input class="skill" type="image" src="./assets/logos/ue.svg"></input>
+                <div>ue</div>
+            </div>
+            <div class="skill-container">
+                <input class="skill" type="image" src="./assets/logos/git.svg"></input>
+                <div>git</div>
+            </div>
+          </div>
+      </div>
+      <div class="modal" id="projects-modal" style="background-image: url(./assets/projects-modal.png);">
+          <input class="x-button" type="image" src="./assets/exit-button.png"></input>
+          <div class="project-content">
+            <div class="project" id="artil-project" style="background-image: url(./assets/project-item.svg)" onclick="artilClick1()">
+              <div class="title" style="background-image: url(./assets/skills-popup.svg)">Artil.io</div>
+              <img class="picture" src="./assets/artil.svg" alt="Artil.io image"> 
+              <div class="text">Artil.io is a PvP multiplayer online shooting game. It features gravity, physics, world wrapping, random terrain generation via Poisson disc-sampling, etc. For more info, click the note icon below.</div>
+              <div class="logos">
+                <img src="./assets/play-button.svg" alt="play icon" style="width:16%; height:auto;" onclick="parent.open('https://drive.google.com/file/d/1Twy-p4hs4cbLF04EEiPk7lyZSvqKtPKq/view?usp=share_link')"/>
+                <img src="./assets/github.svg" alt="github icon" style="width:14%; height:auto;" onclick="parent.open('https://github.com/rstanuwijaya/artil-testing')"/>
+                <img src="./assets/note.svg" alt="note icon" style="width:16%; height:auto; filter:invert(1);" onclick="parent.open('https://docs.google.com/document/d/1oDtLqWJRs4jX-XpOB56Aa7__IfYW-GlWQh5z0TJayTc/edit?usp=sharing')"/>
+              </div>
+            </div>
+            
+            <div class="project" id="wordle-project" style="background-image: url(./assets/project-item.svg)" onclick="wordleClick1()">
+              <div class="title" style="background-image: url(./assets/skills-popup.svg)">Wordle AI</div>
+              <img class="picture" src="./assets/artil.svg" alt="Artil.io image"> 
+              <div class="text">Hello i am text</div>
+              
+            </div>
+            <!-- <div class="project" type="image" src="./assets/project-item.svg"></div> -->
+          </div>
+      </div>
+  </div>
+  <div class="overlay"></div>
+  <script src="./code/App.js"></script>
+</body>
+</html>
