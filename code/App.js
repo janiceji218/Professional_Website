@@ -17,7 +17,8 @@ const experience_tab = document.getElementById('experience-tab');
 const menu = document.getElementsByClassName('menu')[0];
 const artil = document.getElementById('artil-project');
 const wordle = document.getElementById('wordle-project');
-
+const credits_modal = document.getElementById('credits-modal');
+const credits_button = document.getElementById('credits-button');
 
 const me = [{'photo': "./assets/me-photo.svg", 'header': "Janice Ji", 'text': 'Birthday: February 18, 2001'}, 
   {'header1': "Biography", 'text1': 'stuff', 'header2': "Hobbies", 'text2': 'stuff',}];
@@ -44,6 +45,7 @@ about_button.onclick = () => {
   projects_modal.style.display = 'none';
   x_buttons[0].style.display = 'flex';
   about_modal.style.display = 'flex';
+  credits_modal.style.display = 'none';
   background.style.filter = 'brightness(50%)'
 }
 skills_button.onclick = () => {
@@ -53,6 +55,7 @@ skills_button.onclick = () => {
   about_modal.style.display = 'none';
   skills_modal.style.display = 'flex';
   projects_modal.style.display = 'none';
+  credits_modal.style.display = 'none';
   background.style.filter = 'brightness(50%)'
 }
 projects_button.onclick = () => {
@@ -62,6 +65,18 @@ projects_button.onclick = () => {
   about_modal.style.display = 'none';
   skills_modal.style.display = 'none';
   projects_modal.style.display = 'flex';
+  credits_modal.style.display = 'none';
+  background.style.filter = 'brightness(50%)'
+}
+
+credits_button.onclick = () => {
+  modal_container.classList.remove('modal-exit');
+  modal_container.style.display = 'flex';
+  x_buttons[3].style.display = 'flex';
+  about_modal.style.display = 'none';
+  skills_modal.style.display = 'none';
+  projects_modal.style.display = 'none';
+  credits_modal.style.display = 'flex';
   background.style.filter = 'brightness(50%)'
 }
 
@@ -107,10 +122,12 @@ function selectMe() {
           }
         } else if (child.className === 'text') {
           if (child.id === '1') {
-            child.textContent = 'stuff';
+            child.textContent = 'Hello! My name is Janice, I\'m small but lively undergraduate senior CS major in Cornell\'s College of Engineering!';
           } else {
             child.style.opacity = 1;
           }
+        } else if (child.className === 'list') {
+          child.style.display = "none";
         }
       }
     }
@@ -146,10 +163,13 @@ function selectEducation() {
           }
         } else if (child.className === 'text') {
           if (child.id === '1') {
-            child.textContent = 'stuff';
+            child.textContent = 'Here are some relavant courses I\'ve taken so far:';
           } else {
             child.style.opacity = 0;
           }
+        }
+        else if (child.className === 'list') {
+          child.style.display = "block";
         }
       }
     }
@@ -184,10 +204,13 @@ function selectExperience() {
           }
         } else if (child.className === 'text') {
           if (child.id === '1') {
-            child.textContent = 'stuff';
+            child.textContent = 'As a SWE Intern at Meta for two summers, I had the pleasure to work with great teams of people and some interesting projects. For one, I Designed and developed an internal full-stack debugging tool with a simple UI for advertisers to test their CRM (Customer Relationship Management) integration with Meta. Another project utilized a generic, offline publishing service to implement an offline “rank all” jobs delivery flow and more frequently update users\' jobs cache to serve more accurate jobs. I implemented a low-latency, third-stage, real time ranking segment in the “Jobs Near You” delivery flow to serve more accurate and relevant jobs to users which required extensive model training.';
           } else {
             child.style.opacity = 0;
           }
+        }
+        else if (child.className === 'list') {
+          child.style.display = "none";
         }
       }
     }

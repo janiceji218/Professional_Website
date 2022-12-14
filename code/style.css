@@ -77,9 +77,9 @@ body {
 }
 
 .title-container {
-  position: absolute;
-  right: 49%;
-  bottom: 52%;
+  position: relative;
+  /* right: 49%;
+  bottom: 52%; */
   display:flex;
   flex-direction: column;
   /* justify-content: space-between; */
@@ -90,26 +90,29 @@ body {
 .title {
   position: relative;
   align-self: flex-start;
-  left: 24%;
-  width: 80%;
+  left: 0%;
+  margin-top: 17%;
+  width: 55%;
   height: auto;
 }
 
 .social-container {
   position: relative;
-  height: 40%;
-  width: 40%;
+  height: 20%;
+  width: 20%;
   left: 15%;
   display:flex;
   flex-direction: row;
   align-items:center;
-  align-self: center;
+  /* align-self: center; */
   /* border: solid black 2px; */
 }
 
 .social-container .social {
   margin-top: 12px;
-  margin-inline-end: 40px;
+  margin-inline-end: 20%;
+  width: 30%;
+  height: auto;
   /* transition: all .2s ease-in-out; */
 }
 
@@ -256,7 +259,7 @@ body .button-container {
   display: flex;
   position: relative;
   align-self: center;
-  width: 200%;
+  width: 100%;
   height: 65%;
   right: 25%;
   padding-top: 5%;
@@ -288,25 +291,37 @@ body .button-container {
 
 .me-content .left-content .text {
   font-family:LighterFont; 
-  font-size: x-large; 
+  font-size: small; 
   margin-top: -8%;
   text-align: center;
 }
 
 .me-content .right-content .text {
   text-align:start; 
+  width: 130%;
   padding-left: 5px; 
   font-family:LighterFont; 
-  font-size: x-large; 
-  margin-top: -8%;
+  font-size: small; 
+  margin-top: -10%;
 }
 
 .me-content div {
   width: 100%;
   padding-top: 10%;
-  padding-bottom: 11%;
-  font-size: large;
+  padding-bottom: 10%;
+  font-size: medium;
   text-align:center;
+}
+
+ul {
+  display: none;
+  margin-top: -8%;
+}
+li {
+  font-family:LighterFont; 
+  font-size: small; 
+  text-align: start;
+  /* margin-bottom: -10%; */
 }
 
 .me-content .header {
@@ -322,7 +337,7 @@ body .button-container {
   height: 60%;
   top: 5.5%;
   left: 16%;
-  margin: 0;
+  /* margin: 0; */
   grid-template-columns: auto auto auto auto auto;
   grid-template-rows: auto auto;
   align-self: center;
@@ -332,28 +347,38 @@ body .button-container {
 .modal-container .grid-container .skill-container {
   position: relative;
   display: flex;
+  height: 90%;
+  width: auto;
+  /* height: 80%; */
   flex-direction: column;
   margin-bottom: 5px;
+  align-items: center;
+  text-align: center;
 }
 .modal-container .grid-container .skill-container div {
   /* background-image:url("./assets/skills-popup.svg"); 
   background-size:contain; 
   background-repeat:no-repeat; */
-  width: 100px;
+  /* width: 90%; */
   /* height: 50px; */
+  align-self:flex-start;
+  position: relative;
   text-align: center;
-  align-self: center;
-  font-size: small;
+  /* align-self: center; */
+  font-size: x-small;
   /* font-weight: lighter; */
   margin-bottom: 5px;
   margin-top: 5px;
   padding: 5px;
+  width: 0px;
+  left: 2%;
+  /* left: 20%; */
 }
-.grid-container .skill {
+.skill {
   /* left: 25%; */
   margin: 0;
-  width: 95%;
-  height: 95%;
+  width: 90%;
+  height: 90%;
   transition-delay: 0s;
   transition: all 0s;
   /* -webkit-transition: all 0.1s ease-out; */
@@ -362,6 +387,14 @@ body .button-container {
 .grid-container .skill:hover {
   filter: brightness(80%);
   cursor:auto;
+}
+
+.grid-container input {
+  position: relative;
+  align-self: center;
+  margin: 0;
+  width: 90%;
+  height: auto;
 }
 
 .modal .project-content {
@@ -428,7 +461,7 @@ body .button-container {
   background-size:contain;
   background-position: center;
   align-self: center;
-  font-size: large;
+  font-size: small;
   font-weight:lighter;
   text-align: center;
   padding-top: 8%;
@@ -440,7 +473,7 @@ body .button-container {
   position: relative;
   display: flex;
   flex-direction: row;
-  left: 12%;
+  left: 17%;
   /* width: 40%;
   height: 10%; */
 }
@@ -456,11 +489,45 @@ body .button-container {
 .project-content .project .text {
   width: 85%;
   font-family: LighterFont;
-  font-size: small;
+  font-size: xx-small;
   font-weight: lighter;
   text-align: center;
   line-height:12.5px;
   margin-bottom: 2px;
+}
+
+.modal .credits-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* align-self: center; */
+  align-items: center;
+  text-align: center;
+  width: 79%;
+  height: 55%;
+  top: 22%;
+  left: 0%;
+  /* border: solid black 1px; */
+  /* bottom: 50%; */
+}
+
+.credits-content .header {
+  position: relative;
+  align-self: center;
+  background-image:url("../assets/me-box.svg"); 
+  background-repeat:no-repeat; 
+  background-size:contain;
+  width: 100%;
+  height: 40%;
+  text-align: center;
+  padding-top: 10%;
+}
+
+.credits-content .text {
+  position: relative;
+  margin-bottom: 5%;
+  font-family: LighterFont;
+  font-size: 100%;
 }
 
 /* Add Animation */
